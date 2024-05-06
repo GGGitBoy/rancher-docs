@@ -1,15 +1,15 @@
 ---
-title: Monitoring Configuration Reference
+title: Monitoring V2 配置
 ---
 
 <head>
-  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/reference-guides/monitoring-v2-configuration"/>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/zh/reference-guides/monitoring-v2-configuration"/>
 </head>
 
-The following sections will explain important options essential to configuring Monitoring V2 in Rancher:
+以下将说明在 Rancher 中如何配置 Monitoring V2 的基本重要选项：
 
-- [Receiver Configuration](receivers.md)
-- [Route Configuration](routes.md)
-- [ServiceMonitor and PodMonitor Configuration](servicemonitors-and-podmonitors.md)
-- [Helm Chart Options](helm-chart-options.md)
-- [Examples](examples.md)
+- [接收器配置](receivers.md)
+- [路由配置](routes.md)
+- [ServiceMonitor 和 PodMonitor 配置](servicemonitors-and-podmonitors.md)
+- [Helm Chart 选项](helm-chart-options.md)
+- [示例](examples.md)

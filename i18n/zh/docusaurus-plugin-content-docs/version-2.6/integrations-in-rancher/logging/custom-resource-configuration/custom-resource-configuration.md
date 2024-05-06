@@ -1,12 +1,12 @@
 ---
-title: Custom Resource Configuration
+title: 自定义资源配置
 ---
 
 <head>
-  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/integrations-in-rancher/logging/custom-resource-configuration"/>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/zh/integrations-in-rancher/logging/custom-resource-configuration"/>
 </head>
 
-The following Custom Resource Definitions are used to configure logging:
+通过以下自定义资源配置 logging：
 
-- [Flow and ClusterFlow](flows-and-clusterflows.md)
-- [Output and ClusterOutput](outputs-and-clusteroutputs.md)
+- [Flow 和 ClusterFlow](flows-and-clusterflows.md)
+- [Output 和 ClusterOutput](outputs-and-clusteroutputs.md)

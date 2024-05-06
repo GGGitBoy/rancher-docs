@@ -1,55 +1,55 @@
 ---
-title: Monitoring Configuration Guides
+title: 配置
 ---
 
 <head>
-  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/advanced-user-guides/monitoring-v2-configuration-guides"/>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/zh/how-to-guides/advanced-user-guides/monitoring-v2-configuration-guides"/>
 </head>
 
-This page captures some of the most important options for configuring Monitoring V2 in the Rancher UI.
+本文介绍在 Rancher UI 中配置 Monitoring V2 的一些最重要选项。
 
-For information on configuring custom scrape targets and rules for Prometheus, please refer to the upstream documentation for the [Prometheus Operator.](https://github.com/prometheus-operator/prometheus-operator) Some of the most important custom resources are explained in the Prometheus Operator [design documentation.](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/design.md) The Prometheus Operator documentation can help also you set up RBAC, Thanos, or custom configuration.
+有关为 Prometheus 配置自定义抓取目标和规则的信息，请参阅 [Prometheus Operator](https://github.com/prometheus-operator/prometheus-operator) 的上游文档。Prometheus Operator [设计文档](https://github.com/prometheus-operator/prometheus-operator/blob/master/Documentation/design.md)中解释了一些最重要的自定义资源。Prometheus Operator 文档还可以帮助你设置 RBAC、Thanos 或进行自定义配置。
 
-## Setting Resource Limits and Requests
+## 设置资源限制和请求
 
-The resource requests and limits for the monitoring application can be configured when installing `rancher-monitoring`. For more information about the default limits, see [this page.](../../../reference-guides/monitoring-v2-configuration/helm-chart-options.md#configuring-resource-limits-and-requests)
+安装 `rancher-monitoring` 时可以配置 Monitoring 应用的资源请求和限制。有关默认限制的更多信息，请参阅[此页面](../../../reference-guides/monitoring-v2-configuration/helm-chart-options.md#配置资源限制和请求)。
 
-:::note
+:::tip
 
-On an idle cluster, Monitoring V2 has significantly higher CPU usage (up to 70%) as compared to Monitoring V1. To improve performance and achieve similar results as in Monitoring V1, turn off the Prometheus adapter.
+在空闲集群上，Monitoring 可能会占用很多 CPU 资源。要提高性能，请关闭 Prometheus Adapter。
 
 :::
 
-## Prometheus Configuration
+## Prometheus 配置
 
-It is usually not necessary to directly edit the Prometheus custom resource.
+通常不需要直接编辑 Prometheus 自定义资源。
 
-Instead, to configure Prometheus to scrape custom metrics, you will only need to create a new ServiceMonitor or PodMonitor to configure Prometheus to scrape additional metrics.
+相反，要让 Prometheus 抓取自定义指标，你只需创建一个新的 ServiceMonitor 或 PodMonitor 来将 Prometheus 配置为抓取其他指标。
 
+### ServiceMonitor 和 PodMonitor 配置
 
-### ServiceMonitor and PodMonitor Configuration
+有关详细信息，请参阅[此页面](../../../reference-guides/monitoring-v2-configuration/servicemonitors-and-podmonitors.md)。
 
-For details, see [this page.](../../../reference-guides/monitoring-v2-configuration/servicemonitors-and-podmonitors.md)
+### 高级 Prometheus 配置
 
-### Advanced Prometheus Configuration
+有关直接编辑 Prometheus 自定义资源（对高级用例可能有帮助）的更多信息，请参阅[此页面](advanced-configuration/prometheus.md)。
 
-For more information about directly editing the Prometheus custom resource, which may be helpful in advanced use cases, see [this page.](advanced-configuration/prometheus.md)
+## Alertmanager 配置
 
-## Alertmanager Configuration
+Alertmanager 自定义资源通常不需要直接编辑。在常见用例中，你可以通过更新路由和接收器来管理告警。
 
-The Alertmanager custom resource usually doesn't need to be edited directly. For most common use cases, you can manage alerts by updating Routes and Receivers.
+路由和接收器是 Alertmanager 自定义资源配置的一部分。在 Rancher UI 中，路由（Route）和接收器（Receiver）并不是真正的自定义资源，而是 Prometheus Operator 用来将你的配置与 Alertmanager 自定义资源同步的伪自定义资源。当路由和接收器更新时，Monitoring 应用将自动更新 Alertmanager 来反映这些更改。
 
-Routes and receivers are part of the configuration of the alertmanager custom resource. In the Rancher UI, Routes and Receivers are not true custom resources, but pseudo-custom resources that the Prometheus Operator uses to synchronize your configuration with the Alertmanager custom resource. When routes and receivers are updated, the monitoring application will automatically update Alertmanager to reflect those changes.
+对于一些高级用例，你可能需要直接配置 Alertmanager。有关详细信息，请参阅[此页面](advanced-configuration/alertmanager.md)。
 
-For some advanced use cases, you may want to configure alertmanager directly. For more information, refer to [this page.](advanced-configuration/alertmanager.md)
+### 接收器
 
-### Receivers
+接收器（Receiver）用于设置通知。有关如何配置接收器的详细信息，请参阅[此页面](../../../reference-guides/monitoring-v2-configuration/receivers.md)。
 
-Receivers are used to set up notifications. For details on how to configure receivers, see [this page.](../../../reference-guides/monitoring-v2-configuration/receivers.md)
-### Routes
+### 路由
 
-Routes filter notifications before they reach receivers. Each route needs to refer to a receiver that has already been configured. For details on how to configure routes, see [this page.](../../../reference-guides/monitoring-v2-configuration/routes.md)
+路由（Route）在通知到达接收器之前过滤它们。每条路由都需要引用一个已经配置好的接收器。有关如何配置路由的详细信息，请参阅[此页面](../../../reference-guides/monitoring-v2-configuration/routes.md)。
 
-### Advanced
+### 高级配置
 
-For more information about directly editing the Alertmanager custom resource, which may be helpful in advanced use cases, see [this page.](advanced-configuration/alertmanager.md)
+有关直接编辑 Alertmanager 自定义资源（对高级用例可能有帮助）的更多信息，请参阅[此页面](advanced-configuration/alertmanager.md)。

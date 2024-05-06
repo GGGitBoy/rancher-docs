@@ -1,15 +1,15 @@
 ---
-title: Monitoring/Alerting Guides
+title: Monitoring/Alerting 指南
 ---
 
 <head>
-  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/advanced-user-guides/monitoring-alerting-guides"/>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/zh/how-to-guides/advanced-user-guides/monitoring-alerting-guides"/>
 </head>
 
-- [Enable monitoring](enable-monitoring.md)
-- [Uninstall monitoring](uninstall-monitoring.md)
-- [Monitoring workloads](set-up-monitoring-for-workloads.md)
-- [Customizing Grafana dashboards](customize-grafana-dashboard.md)
-- [Persistent Grafana dashboards](create-persistent-grafana-dashboard.md)
-- [Debugging high memory usage](debug-high-memory-usage.md)
-- [Migrating from Monitoring V1 to V2](migrate-to-rancher-v2.5+-monitoring.md)
+- [启用 Monitoring](enable-monitoring.md)
+- [卸载 Monitoring](uninstall-monitoring.md)
+- [为工作负载设置 Monitoring](set-up-monitoring-for-workloads.md)
+- [自定义 Grafana 仪表板](customize-grafana-dashboard.md)
+- [持久化 Grafana 仪表板](create-persistent-grafana-dashboard.md)
+- [调试高内存用量](debug-high-memory-usage.md)
+- [迁移 Monitoring V1 到 V2](migrate-to-rancher-v2.5+-monitoring.md)

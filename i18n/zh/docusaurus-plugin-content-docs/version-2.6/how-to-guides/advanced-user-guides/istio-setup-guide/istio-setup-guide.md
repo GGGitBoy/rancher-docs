@@ -1,34 +1,34 @@
 ---
-title: Istio Setup Guides
+title: 设置指南
 ---
 
 <head>
-  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/how-to-guides/advanced-user-guides/istio-setup-guide"/>
+  <link rel="canonical" href="https://ranchermanager.docs.rancher.com/zh/how-to-guides/advanced-user-guides/istio-setup-guide"/>
 </head>
 
-This section describes how to enable Istio and start using it in your projects.
+本文介绍如何启用 Istio 并在你的项目中使用它。
 
-If you use Istio for traffic management, you will need to allow external traffic to the cluster. In that case, you will need to follow all of the steps below.
+如果你使用 Istio 进行流量管理，则需要允许外部流量进入集群。在这种情况下，你将需要执行以下所有步骤。
 
-## Prerequisites
+## 先决条件
 
-This guide assumes you have already [installed Rancher,](../../../getting-started/installation-and-upgrade/installation-and-upgrade.md) and you have already [provisioned a separate Kubernetes cluster](../../new-user-guides/kubernetes-clusters-in-rancher-setup/kubernetes-clusters-in-rancher-setup.md) on which you will install Istio.
+本指南假设你已经[安装 Rancher](../../../getting-started/installation-and-upgrade/installation-and-upgrade.md)，且已经[配置了一个单独的 Kubernetes 集群](../../new-user-guides/kubernetes-clusters-in-rancher-setup/kubernetes-clusters-in-rancher-setup.md)并要在该集群上安装 Istio。
 
-The nodes in your cluster must meet the [CPU and memory requirements.](../../../integrations-in-rancher/istio/cpu-and-memory-allocations.md)
+集群中的节点必须满足 [CPU 和内存要求](../../../integrations-in-rancher/istio/cpu-and-memory-allocations.md)。
 
-The workloads and services that you want to be controlled by Istio must meet [Istio's requirements.](https://istio.io/docs/setup/additional-setup/requirements/)
+Istio 控制的工作负载和服务必须满足 [Istio 要求](https://istio.io/docs/setup/additional-setup/requirements/)。
 
-## Install
+## 安装
 
-:::tip Quick Setup Tip:
+:::tip 快速设置提示:
 
-If you don't need external traffic to reach Istio, and you just want to set up Istio for monitoring and tracing traffic within the cluster, skip the steps for [setting up the Istio gateway](set-up-istio-gateway.md) and [setting up Istio's components for traffic management.](set-up-traffic-management.md)
+如果你不需要外部流量到达 Istio，而只想设置 Istio 以监控和跟踪集群内的流量，请跳过[设置 Istio Gateway](set-up-istio-gateway.md)和[设置 Istio 的流量管理组件](set-up-traffic-management.md)步骤。
 
 :::
 
-1. [Enable Istio in the cluster.](enable-istio-in-cluster.md)
-1. [Enable Istio in all the namespaces where you want to use it.](enable-istio-in-namespace.md)
-1. [Add deployments and services that have the Istio sidecar injected.](use-istio-sidecar.md)
-1. [Set up the Istio gateway. ](set-up-istio-gateway.md)
-1. [Set up Istio's components for traffic management.](set-up-traffic-management.md)
-1. [Generate traffic and see Istio in action.](generate-and-view-traffic.md)
+1. [在集群中启用 Istio。](enable-istio-in-cluster.md)
+2. [在命名空间中启用 Istio。](enable-istio-in-namespace.md)
+3. [使用 Istio Sidecar 添加部署和服务。](use-istio-sidecar.md)
+4. [设置 Istio Gateway。](set-up-istio-gateway.md)
+5. [设置 Istio 的流量管理组件。](set-up-traffic-management.md)
+6. [生成和查看流量。](generate-and-view-traffic.md)
